@@ -7,21 +7,69 @@
 
 <style>
 body{margin:0;font-family:Arial;background:#f4f6f9}
-nav{background:#000;color:#fff;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0}
-nav a{color:#fff;text-decoration:none;margin-left:15px}
-.menu{display:flex}
-.hamburger{display:none;font-size:26px;cursor:pointer}
+
+nav{
+background:#000;
+color:#fff;
+padding:14px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0
+}
+
+.logo{font-weight:bold;font-size:18px}
+
+.menu{
+display:flex;
+gap:15px
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+font-weight:600
+}
+
+.hamburger{
+display:none;
+font-size:26px;
+cursor:pointer
+}
+
+.mobile-menu{
+display:none;
+flex-direction:column;
+background:#000;
+padding:15px
+}
+
+.mobile-menu a{
+color:white;
+padding:8px 0;
+text-decoration:none
+}
 
 header{
 background:url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7') center/cover no-repeat;
-padding:120px 20px;
 color:white;
-text-align:center
+text-align:center;
+padding:120px 20px
 }
 
-section{background:white;margin:20px;padding:30px;border-radius:12px}
+section{
+background:white;
+margin:20px;
+padding:30px;
+border-radius:12px
+}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px
+}
 
 .card{
 background:#f9f9f9;
@@ -32,42 +80,73 @@ text-align:center
 
 img{width:100%;border-radius:10px}
 
-.contact input,.contact textarea{
-width:100%;padding:10px;margin:8px 0
+input,textarea{
+width:100%;
+padding:10px;
+margin:8px 0
 }
 
-footer{background:#000;color:white;padding:25px;text-align:center}
+footer{
+background:#000;
+color:white;
+padding:25px;
+text-align:center
+}
 
 @media(max-width:768px){
-.menu{display:none;flex-direction:column;background:#000;position:absolute;top:60px;right:0;width:200px}
-.menu a{padding:10px}
+.menu{display:none}
 .hamburger{display:block}
 }
 </style>
 
 <script>
 function toggleMenu(){
-document.getElementById("menu").classList.toggle("show");
+document.getElementById("mobile").classList.toggle("show");
 }
 </script>
+
+<style>
+.show{display:flex}
+</style>
 
 </head>
 <body>
 
 <nav>
-<b>City Line Logistics</b>
-<div class="hamburger" onclick="toggleMenu()">☰</div>
-<div class="menu" id="menu">
+<div class="logo">City Line Logistics</div>
+
+<div class="menu">
 <a href="#services">Services</a>
 <a href="#fleet">Fleet</a>
-<a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
 </div>
+
+<div class="hamburger" onclick="toggleMenu()">☰</div>
 </nav>
 
+<div id="mobile" class="mobile-menu">
+
+<b>FEATURES</b>
+<a>24×7 Transport</a>
+<a>Live Tracking</a>
+<a>Fast Delivery</a>
+<a>Secure Handling</a>
+<a>Pan India Service</a>
+<a>Business Logistics</a>
+<a>Household Transport</a>
+<a>Express Service</a>
+<a>Dedicated Vehicles</a>
+
+<hr style="border-color:#333">
+
+<a href="#services">Services</a>
+<a href="#fleet">Fleet</a>
+<a href="#contact">Contact</a>
+</div>
+
 <header>
-<h1>Fast & Reliable Logistics</h1>
-<p>Ahmedabad | 24x7 Transport Service</p>
+<h1>City Line Logistics</h1>
+<p>Reliable Transport Services – Ahmedabad</p>
 </header>
 
 <section id="services">
@@ -75,39 +154,31 @@ document.getElementById("menu").classList.toggle("show");
 <div class="grid">
 <div class="card">Local Transport</div>
 <div class="card">Intercity Delivery</div>
-<div class="card">Truck Services</div>
-<div class="card">Warehouse Logistics</div>
+<div class="card">Truck & Tempo</div>
+<div class="card">Industrial Goods</div>
 </div>
 </section>
 
 <section id="fleet">
 <h2>Our Fleet</h2>
 <div class="grid">
-<img src="https://images.unsplash.com/photo-1595433707802-5c6a41e89c39">
 <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957">
 <img src="https://images.unsplash.com/photo-1619642751463-2d6ec6d2c36d">
+<img src="https://images.unsplash.com/photo-1595433707802-5c6a41e89c39">
 </div>
 </section>
 
-<section id="gallery">
-<h2>Work Gallery</h2>
-<div class="grid">
-<img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df">
-<img src="https://images.unsplash.com/photo-1592833159058-38c8e2b7b1b5">
-<img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60">
-</div>
-</section>
-
-<section id="contact" class="contact">
+<section id="contact">
 <h2>Contact Us</h2>
+
 <input placeholder="Your Name">
 <input placeholder="Phone Number">
 <textarea placeholder="Message"></textarea>
-<button>Send Message</button>
+<button>Send</button>
 
 <iframe 
-src="https://maps.google.com/maps?q=Ahmedabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" height="250" style="border:0;margin-top:15px"></iframe>
+src="https://maps.google.com/maps?q=Ahmedabad&output=embed"
+width="100%" height="250"></iframe>
 </section>
 
 <footer>
